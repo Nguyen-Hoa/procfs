@@ -94,6 +94,10 @@ func (rz RaplZone) GetEnergyMicrojoules() (uint64, error) {
 	return util.ReadUintFromFile(filepath.Join(rz.Path, "/energy_uj"))
 }
 
+func (rz RaplZone) GetPowerMicrowatts() (uint64, error) {
+	return util.ReadUintFromFile(filepath.Join(rz.Path, "/power_uw"))
+}
+
 // getIndexAndName returns a pair of (index, name) for a given name and name
 // counting map. Some RAPL-names have an index at the end, some have duplicates
 // without an index at the end. When the index is embedded in the name, it is
